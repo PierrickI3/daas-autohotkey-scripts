@@ -1,6 +1,6 @@
 #SingleInstance force
-#NoEnv  						; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  				; Recommended for new scripts due to its superior speed and reliability.
+#NoEnv  			; Recommended for performance and compatibility with future AutoHotkey releases.
+SendMode Input  		; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  	; Ensures a consistent starting directory.
 StringCaseSense On
 AutoTrim OFF
@@ -14,10 +14,10 @@ AutoTrim OFF
 AHKPanic(1, 0, 0, 0)
 
 ; Variables
-KeyDelay 			= 500
+KeyDelay 		= 500
 InputKeyDelay 		= 50
 WinWaitActiveDelay 	= 300
-LineName 			= Loopback
+LineName 		= Loopback
 LineGroupName 		= Loopback
 
 SetKeyDelay KeyDelay 
