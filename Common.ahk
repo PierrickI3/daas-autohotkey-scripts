@@ -26,7 +26,7 @@ AHKPanic(Kill=0, Pause=0, Suspend=0, SelfToo=0) {
   }
 }
 
-WaitForWindow(WindowTitle) {
+WaitForWin(WindowTitle) {
   WinWait, %WindowTitle%, , WinWaitActiveDelay 
   IfWinNotActive, %WindowTitle%, , WinActivate, %WindowTitle%,
   WinWaitActive, %WindowTitle%,
