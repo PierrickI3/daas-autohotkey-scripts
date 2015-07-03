@@ -110,12 +110,12 @@ RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   ; Select Loopback
   ControlFocus, SysListView321
   Sleep 50
-  SetKeyDelay InputKeyDelay
+  SetKeyDelay -1
   Send %LineGroupName%
   SetKeyDelay KeyDelay
 
   ; Click on Remove
-  Sleep 50
+  Sleep 20
   ControlClick, Button10
   Sleep 50
 
