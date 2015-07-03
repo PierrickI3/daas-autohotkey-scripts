@@ -82,7 +82,7 @@ WaitForWin("Line Configuration")
 Sleep WindowActiveDelay
 
 ; Get back to menu
-Send {SHIFT DOWN}{tab}{tab}{tab}{SHIFT UP}
+ControlFocus, ListBox1
 
 ; Go to Proxy
 Send {down}{down}{down}{down}{down}
