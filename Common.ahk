@@ -111,7 +111,7 @@ RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   ControlFocus, SysListView321, "Regional Dial Plan - Edit Pattern"
   Sleep 200
   SetKeyDelay InputKeyDelay
-  Send %LineName%
+  Send %LineGroupName%
   SetKeyDelay KeyDelay
 
   ; Click on Remove
