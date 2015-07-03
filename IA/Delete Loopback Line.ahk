@@ -1,6 +1,6 @@
 #SingleInstance force
-#NoEnv  			; Recommended for performance and compatibility with future AutoHotkey releases.
-SetWorkingDir %A_ScriptDir%  	; Ensures a consistent starting directory.
+#NoEnv  			        ; Recommended for performance and compatibility with future AutoHotkey releases.
+SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 StringCaseSense On
 AutoTrim OFF
 
@@ -13,10 +13,11 @@ AutoTrim OFF
 AHKPanic(1, 0, 0, 0)
 
 ; Variables
-KeyDelay 		= 500
+KeyDelay 		    = 500
 InputKeyDelay 		= 50
 WinWaitActiveDelay 	= 300
-LineName 		= Loopback
+WindowActiveDelay   = 200
+LineName 		    = Loopback
 LineGroupName 		= Loopback
 
 SetKeyDelay KeyDelay
@@ -46,10 +47,12 @@ SetKeyDelay KeyDelay
 Sleep 100
 Send {tab}{down}{enter}
 WaitForWin("Phone Number Configuration")
+Sleep WindowActiveDelay
 
 ; Open Dial Plan
 Send {space}
 WaitForWin("Regional Dial Plan")
+Sleep WindowActiveDelay
 
 ; =======================================
 ; Start Line Group Removal from Dial Plan
@@ -61,6 +64,7 @@ Send {tab}1 ; sip:Z is in first position
 ; Edit it
 ControlClick, Button3
 WaitForWin("Regional Dial Plan - Edit Pattern")
+Sleep WindowActiveDelay
 
 ; Go to the list view
 Send {SHIFT DOWN}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{SHIFT UP}
@@ -84,11 +88,15 @@ ControlClick, Button17
 ; ======================
 
 WaitForWin("Regional Dial Plan")
+Sleep WindowActiveDelay
 
 ; Click on OK
 ControlClick, Button11
 
 WaitForWin("Phone Number Configuration")
+Sleep WindowActiveDelay
+
+; Click on OK
 ControlClick, Button1
 
 ; =================
@@ -111,6 +119,7 @@ SetKeyDelay KeyDelay
 Send {delete}
 Sleep 100
 WaitForWin("Interaction Administrator")
+Sleep WindowActiveDelay
 ControlClick, Button1
 
 ; ===========
@@ -133,5 +142,8 @@ Sleep 100
 ; Delete it!
 Send {delete}
 Sleep 100
+
+; Confirm
 WaitForWin("Interaction Administrator")
+Sleep WindowActiveDelay
 ControlClick, Button1
