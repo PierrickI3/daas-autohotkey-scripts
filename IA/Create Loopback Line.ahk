@@ -165,10 +165,71 @@ Sleep WindowActiveDelay
 ; Start Line Group Assignment
 ; ===========================
 Send {tab}
+
+; Only works with the US Dial Plan with one local exchange!
+
 ; Add to sip:Z
-AddLineGroupToRegionalDialPlan(%LineGroupName%, 1)
+AddLineGroupToRegionalDialPlan(LineGroupName, 1)
 ; Add to sips:Z
-AddLineGroupToRegionalDialPlan(%LineGroupName%, 2)
+AddLineGroupToRegionalDialPlan(LineGroupName, 2)
+; Add to tel:Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 3)
+; Add to ?@Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 4)
+; Add to 00
+AddLineGroupToRegionalDialPlan(LineGroupName, 6)
+; Add to 911
+AddLineGroupToRegionalDialPlan(LineGroupName, 7)
+; Add to 411
+AddLineGroupToRegionalDialPlan(LineGroupName, 8)
+; Add to 1411
+AddLineGroupToRegionalDialPlan(LineGroupName, 9)
+; Add to 5551212
+AddLineGroupToRegionalDialPlan(LineGroupName, 10)
+; Add to Nxx5551212
+AddLineGroupToRegionalDialPlan(LineGroupName, 11)
+; Add to 1Nxx5551212
+AddLineGroupToRegionalDialPlan(LineGroupName, 12)
+; Add to +1Nxx5551212
+AddLineGroupToRegionalDialPlan(LineGroupName, 13)
+; Add to NXXXXXXXXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 14)
+; Add to $$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 15)
+; Add to 1$$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 16)
+; Add to +1$$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 17)
+; Add to $$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 18)
+; Add to 1$$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 19)
+; Add to +1$$$MxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 20)
+; Add to 317XXXXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 21)
+; Add to 1317XXXXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 22)
+; Add to +1317XXXXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 23)
+; Add to NxxNxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 24)
+; Add to 1NxxNxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 25)
+; Add to +1NxxNxxXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 26)
+; Add to NXXXXXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 27)
+; Add to $$$XXXXZ
+AddLineGroupToRegionalDialPlan(LineGroupName, 28)
+; Add to 011+Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 36)
+; Add to 011Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 37)
+; Add to +Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 38)
+; Add to Z
+AddLineGroupToRegionalDialPlan(LineGroupName, 39)
 
 ; =========================
 ; End Line Group Assignment
