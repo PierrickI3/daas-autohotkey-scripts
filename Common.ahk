@@ -49,6 +49,8 @@ WaitForWin(WindowTitle)
 */
 AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
 {
+  ControlFocus, SysListView321, Regional Dial Plan
+  
   ; Select item in dial plan list
   Send %EntryPosition%
 
