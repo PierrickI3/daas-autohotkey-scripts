@@ -27,11 +27,11 @@ SetKeyDelay KeyDelay
 Process, Exist, IAShellU.exe
 If (ErrorLevel != 0) ; 
 {
-  WinClose Interaction Administrator -
+  WinClose Interaction Administrator
 }
 
 Run "C:\I3\IC\Server\IAShellU.exe"
-WaitForWin("Interaction Administrator -")
+WaitForWin("Interaction Administrator")
 Sleep, 500
 
 ; =====================
