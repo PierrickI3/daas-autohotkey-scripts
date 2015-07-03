@@ -52,7 +52,9 @@ AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   ControlFocus, SysListView321, Regional Dial Plan
   
   ; Select item in dial plan list
+  SetKeyDelay 50
   Send %EntryPosition%
+  SetKeyDelay 500
   Sleep 100
 
   ; Edit it
@@ -78,6 +80,43 @@ AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   ; Wait For Regional Dial Plan - Edit Pattern to come back
   WaitForWin("Regional Dial Plan - Edit Pattern")
   Sleep 200
+
+  ; Click on OK
+  ControlClick, Button17
+
+  ; Wait For Regional Dial Plan to come back
+  WaitForWin("Regional Dial Plan")
+  Sleep 200
+}
+
+/*
+  Removes a line group in the specified item # in the list
+*/
+RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
+{
+  ControlFocus, SysListView321, Regional Dial Plan
+  
+  ; Select item in dial plan list
+  SetKeyDelay 50
+  Send %EntryPosition%
+  SetKeyDelay 500
+  Sleep 100
+
+  ; Edit it
+  ControlClick, Button3
+  WaitForWin("Regional Dial Plan - Edit Pattern")
+  Sleep 200
+
+  ; Select Loopback
+  ControlFocus, SysListView321, Dial Group - Add Entry
+  SetKeyDelay InputKeyDelay
+  Send %LineName%
+  SetKeyDelay KeyDelay
+
+  ; Click on Remove
+  Sleep 100
+  ControlClick, Button10
+  Sleep 100
 
   ; Click on OK
   ControlClick, Button17
