@@ -9,10 +9,9 @@ AutoTrim OFF
 ; ========
 #Include ..\Common.ahk
 
-; Kill Other Scripts
-AHKPanic(1, 0, 0, 0)
-
+; =========
 ; Variables
+; =========
 KeyDelay 		    = 500
 InputKeyDelay 		= 50
 WinWaitActiveDelay 	= 300
@@ -22,9 +21,13 @@ LineGroupName 		= Loopback
 
 SetKeyDelay KeyDelay
 
-; ====================================================
+; Kill Other Scripts
+AHKPanic(1, 0, 0, 0)
+
+; ===============================
+; Start Interaction Administrator
+; ===============================
 ; Close Existing instance of Interaction Administrator
-; ====================================================
 Process, Exist, IAShellU.exe
 If (ErrorLevel != 0) ; 
 {
@@ -33,7 +36,7 @@ If (ErrorLevel != 0) ;
 
 Run "C:\I3\IC\Server\IAShellU.exe"
 WaitForWin("Interaction Administrator")
-Sleep, 500
+Sleep, 2000
 
 ; =====================
 ; Remove from Dial Plan
