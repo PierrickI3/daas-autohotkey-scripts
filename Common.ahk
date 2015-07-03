@@ -105,24 +105,24 @@ RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   ; Edit it
   ControlClick, Button3
   WaitForWin("Regional Dial Plan - Edit Pattern")
-  Sleep 200
+  Sleep 100
 
   ; Select Loopback
-  ControlFocus, SysListView321, "Regional Dial Plan - Edit Pattern"
-  Sleep 200
+  ControlFocus, SysListView321
+  Sleep 50
   SetKeyDelay InputKeyDelay
   Send %LineGroupName%
   SetKeyDelay KeyDelay
 
   ; Click on Remove
-  Sleep 100
+  Sleep 50
   ControlClick, Button10
-  Sleep 100
+  Sleep 50
 
   ; Click on OK
   ControlClick, Button17
 
   ; Wait For Regional Dial Plan to come back
   WaitForWin("Regional Dial Plan")
-  Sleep 200
+  Sleep 100
 }
