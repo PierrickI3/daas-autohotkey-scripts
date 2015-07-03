@@ -15,6 +15,7 @@ AutoTrim OFF
 KeyDelay 			= 500
 InputKeyDelay 		= 50
 WinWaitActiveDelay 	= 300
+WindowActiveDelay   = 200
 LineName 			= Loopback
 LineGroupName 		= Loopback
 
@@ -50,6 +51,7 @@ SetKeyDelay KeyDelay
 Sleep 200
 Send ^n
 WaitForWin("Entry Name")
+Sleep WindowActiveDelay
 
 ; Enter Line name
 SetKeyDelay InputKeyDelay 
@@ -58,35 +60,39 @@ SetKeyDelay KeyDelay
 
 ; Wait for Line Configuration dialog
 WaitForWin("Line Configuration")
+Sleep WindowActiveDelay
 
 ; Go to Identity (Out)
 Send {down}{down}
-Sleep 300
+Sleep WindowActiveDelay
 
 ; Open Line Value 1
 ControlClick, Button22
 
 ; Wait for Configure Line Value dialog
 WaitForWin("Configure Line Value")
+Sleep WindowActiveDelay
 
 ; Check Anonymous
 Send {space}{enter}
 
 ; Wait for Line Configuration dialog to come back
 WaitForWin("Line Configuration")
+Sleep WindowActiveDelay
 
 ; Get back to menu
 Send {SHIFT DOWN}{tab}{tab}{tab}{SHIFT UP}
 
 ; Go to Proxy
 Send {down}{down}{down}{down}{down}
-Sleep 200
+Sleep WindowActiveDelay
 
 ; Click on Add
 ControlClick, Button35
 
 ; Wait for SIP Address dialog
 WaitForWin("SIP Address")
+Sleep WindowActiveDelay
 
 ; Set to local IP address of "Ethernet 2" adapter
 SetKeyDelay InputKeyDelay 
@@ -95,6 +101,7 @@ SetKeyDelay KeyDelay
 
 ; Wait for Line Configuration dialog to come back
 WaitForWin("Line Configuration")
+Sleep WindowActiveDelay
 
 ; We're done, press ok
 ControlClick, Button67
@@ -108,11 +115,12 @@ Send Line Groups
 SetKeyDelay KeyDelay
 
 ; Create a new line group
-Sleep 200
+Sleep WindowActiveDelay
 Send ^n
 
 ; Wait for Entry Name dialog
 WaitForWin("Entry Name")
+Sleep WindowActiveDelay
 
 ; Enter Line Group Name
 SetKeyDelay InputKeyDelay 
@@ -133,6 +141,7 @@ Control, ChooseString, %LineName%, ListBox1, Line Group Configuration
 ; Close Line Group
 Send {tab}{enter}
 WaitForWin("Interaction Administrator")
+Sleep WindowActiveDelay
 
 ; ================
 ; Add to Dial Plan
@@ -145,10 +154,12 @@ SetKeyDelay KeyDelay
 ; Edit Configuration
 Send {tab}{down}{enter}
 WaitForWin("Phone Number Configuration")
+Sleep WindowActiveDelay
 
 ; Open Dial Plan
 Send {space}
 WaitForWin("Regional Dial Plan")
+Sleep WindowActiveDelay
 
 ; ===========================
 ; Start Line Group Assignment
@@ -159,10 +170,12 @@ Send {tab}1 ; sip:Z is in first position. Find a better way?
 ; Edit it
 ControlClick, Button3
 WaitForWin("Regional Dial Plan - Edit Pattern")
+Sleep WindowActiveDelay
 
 ; Click on Add Group
 ControlClick, Button8
 WaitForWin("Dial Group - Add Entry")
+Sleep WindowActiveDelay
 
 ; Select Loopback
 ControlFocus, SysListView321, Dial Group - Add Entry
@@ -175,6 +188,7 @@ ControlClick, Button2
 
 ; Wait For Regional Dial Plan - Edit Pattern to come back
 WaitForWin("Regional Dial Plan - Edit Pattern")
+Sleep WindowActiveDelay
 
 ; =========================
 ; End Line Group Assignment
@@ -185,12 +199,14 @@ ControlClick, Button17
 
 ; Wait For Regional Dial Plan to come back
 WaitForWin("Regional Dial Plan")
+Sleep WindowActiveDelay
 
 ;Exit (click on OK)
 ControlClick, Button11
 
 ; Wait For Phone Number Configuration to come back
 WaitForWin("Phone Number Configuration")
+Sleep WindowActiveDelay
 
 ;Exit (click on OK)
 ControlClick, Button1
