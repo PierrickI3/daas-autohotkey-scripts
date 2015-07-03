@@ -53,34 +53,36 @@ AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   
   ; Select item in dial plan list
   Send %EntryPosition%
+  Sleep 100
 
   ; Edit it
   ControlClick, Button3
   WaitForWin("Regional Dial Plan - Edit Pattern")
-  Sleep WindowActiveDelay
+  Sleep 200
 
   ; Click on Add Group
   ControlClick, Button8
   WaitForWin("Dial Group - Add Entry")
-  Sleep WindowActiveDelay
+  Sleep 200
 
   ; Select Loopback
   ControlFocus, SysListView321, Dial Group - Add Entry
-  SetKeyDelay InputKeyDelay
+  SetKeyDelay 50
   Send %LineGroupName%
-  SetKeyDelay KeyDelay
+  SetKeyDelay 500
 
   ; Click on OK
+  Sleep 200
   ControlClick, Button2
 
   ; Wait For Regional Dial Plan - Edit Pattern to come back
   WaitForWin("Regional Dial Plan - Edit Pattern")
-  Sleep WindowActiveDelay
+  Sleep 200
 
   ; Click on OK
   ControlClick, Button17
 
   ; Wait For Regional Dial Plan to come back
   WaitForWin("Regional Dial Plan")
-  Sleep WindowActiveDelay
+  Sleep 200
 }
