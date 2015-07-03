@@ -152,6 +152,7 @@ Send Phone Numbers
 SetKeyDelay KeyDelay
 
 ; Edit Configuration
+Sleep 100
 Send {tab}{down}{enter}
 WaitForWin("Phone Number Configuration")
 Sleep WindowActiveDelay
