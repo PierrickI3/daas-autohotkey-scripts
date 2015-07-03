@@ -68,8 +68,8 @@ AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   Sleep 200
 
   ; Select Loopback
-  ControlFocus, SysListView321, Dial Group - Add Entry
-  SetKeyDelay 50
+  ControlFocus, SysListView321
+  SetKeyDelay 10
   Send %LineGroupName%
   SetKeyDelay 500
 
