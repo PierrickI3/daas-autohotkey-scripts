@@ -1,6 +1,5 @@
 #SingleInstance force
 #NoEnv  			; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  		; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  	; Ensures a consistent starting directory.
 StringCaseSense On
 AutoTrim OFF
@@ -20,12 +19,12 @@ WinWaitActiveDelay 	= 300
 LineName 		= Loopback
 LineGroupName 		= Loopback
 
-SetKeyDelay KeyDelay 
+SetKeyDelay KeyDelay
 
 ; Open Interaction Administrator
 Run "C:\I3\IC\Server\IAShellU.exe"
-WaitForWin("Interaction Administrator")
-Sleep, 2000
+WaitForWin("Interaction Administrator -")
+Sleep, 500
 
 ; ============
 ; Create Lines
@@ -38,12 +37,13 @@ WaitForWin("Entry Name")
 ; Enter Line name
 SetKeyDelay InputKeyDelay 
 Send %LineName%{enter}
-SetKeyDelay KeyDelay 
+SetKeyDelay KeyDelay
 ; Wait for Line Configuration dialog
 WaitForWin("Line Configuration")
 
 ; Go to Identity (Out)
 Send {down}{down}
+Sleep 200
 ; Open Line Value 1
 ControlClick, Button22
 ; Wait for Configure Line Value dialog
