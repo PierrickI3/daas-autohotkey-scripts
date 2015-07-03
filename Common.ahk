@@ -108,7 +108,7 @@ RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   Sleep 200
 
   ; Select Loopback
-  ControlFocus, SysListView321, "Dial Group - Add Entry"
+  ControlFocus, SysListView321, "Regional Dial Plan - Edit Pattern"
   Sleep 200
   SetKeyDelay InputKeyDelay
   Send %LineName%
