@@ -30,13 +30,13 @@ AHKPanic(1, 0, 0, 0)
 Process, Exist, IAShellU.exe
 If (ErrorLevel != 0) ; 
 {
-  WinClose Interaction Administrator -
+  WinClose Interaction Administrator
 }
 
 ; Open Interaction Administrator
 Run "C:\I3\IC\Server\IAShellU.exe"
-WaitForWin("Interaction Administrator -")
-Sleep, 500
+WaitForWin("Interaction Administrator")
+Sleep, 2000
 
 ; ============
 ; Create Lines
@@ -47,6 +47,7 @@ Send Lines
 SetKeyDelay KeyDelay
 
 ; Create a new line
+Sleep 200
 Send ^n
 WaitForWin("Entry Name")
 
@@ -60,7 +61,7 @@ WaitForWin("Line Configuration")
 
 ; Go to Identity (Out)
 Send {down}{down}
-Sleep 200
+Sleep 300
 
 ; Open Line Value 1
 ControlClick, Button22
@@ -79,6 +80,7 @@ Send {SHIFT DOWN}{tab}{tab}{tab}{SHIFT UP}
 
 ; Go to Proxy
 Send {down}{down}{down}{down}{down}
+Sleep 200
 
 ; Click on Add
 ControlClick, Button35
@@ -100,8 +102,14 @@ ControlClick, Button67
 ; =================
 ; Create Line Group
 ; =================
+; Go to Line Groups
+SetKeyDelay InputKeyDelay
+Send Line Groups
+SetKeyDelay KeyDelay
+
 ; Create a new line group
-Send {down}^n
+Sleep 200
+Send ^n
 
 ; Wait for Entry Name dialog
 WaitForWin("Entry Name")
@@ -112,12 +120,14 @@ Send %LineGroupName%{enter}
 SetKeyDelay KeyDelay 
 
 ; Select for reporting and Dial Group
+Sleep 100
 Send {tab}{space}{tab}{space}
 
 ; Go to Members tab
 Send {CTRL DOWN}{tab}{CTRL UP}
 
 ; Select "Loopback" entry
+Sleep 100
 Control, ChooseString, %LineName%, ListBox1, Line Group Configuration
 
 ; Close Line Group

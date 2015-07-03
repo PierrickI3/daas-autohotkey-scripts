@@ -43,6 +43,7 @@ Send Phone Numbers
 SetKeyDelay KeyDelay
 
 ; Edit Configuration
+Sleep 100
 Send {tab}{down}{enter}
 WaitForWin("Phone Number Configuration")
 
@@ -71,6 +72,7 @@ Send %LineName%
 SetKeyDelay KeyDelay
 
 ; Click on Remove
+Sleep 100
 ControlClick, Button10
 Sleep 100
 
@@ -107,7 +109,7 @@ SetKeyDelay KeyDelay
 
 ; Delete it!
 Send {delete}
-Sleep 200
+Sleep 100
 WaitForWin("Interaction Administrator")
 ControlClick, Button1
 
@@ -126,9 +128,10 @@ Send {tab}
 SetKeyDelay InputKeyDelay
 Send %LineName%
 SetKeyDelay KeyDelay
+Sleep 100
 
 ; Delete it!
 Send {delete}
-Sleep 200
+Sleep 100
 WaitForWin("Interaction Administrator")
 ControlClick, Button1
