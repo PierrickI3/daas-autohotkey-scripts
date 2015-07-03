@@ -164,8 +164,11 @@ Sleep WindowActiveDelay
 ; ===========================
 ; Start Line Group Assignment
 ; ===========================
+Send {tab}
 ; Add to sip:Z
 AddLineGroupToRegionalDialPlan(%LineGroupName%, 1)
+; Add to sips:Z
+AddLineGroupToRegionalDialPlan(%LineGroupName%, 2)
 
 ; =========================
 ; End Line Group Assignment

@@ -50,7 +50,7 @@ WaitForWin(WindowTitle)
 AddLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
 {
   ; Select item in dial plan list
-  Send {tab}%EntryPosition%
+  Send %EntryPosition%
 
   ; Edit it
   ControlClick, Button3
