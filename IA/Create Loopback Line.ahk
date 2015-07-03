@@ -164,42 +164,12 @@ Sleep WindowActiveDelay
 ; ===========================
 ; Start Line Group Assignment
 ; ===========================
-; Select sip:Z
-Send {tab}1 ; sip:Z is in first position. Find a better way?
-
-; Edit it
-ControlClick, Button3
-WaitForWin("Regional Dial Plan - Edit Pattern")
-Sleep WindowActiveDelay
-
-; Click on Add Group
-ControlClick, Button8
-WaitForWin("Dial Group - Add Entry")
-Sleep WindowActiveDelay
-
-; Select Loopback
-ControlFocus, SysListView321, Dial Group - Add Entry
-SetKeyDelay InputKeyDelay
-Send %LineName%
-SetKeyDelay KeyDelay
-
-; Click on OK
-ControlClick, Button2
-
-; Wait For Regional Dial Plan - Edit Pattern to come back
-WaitForWin("Regional Dial Plan - Edit Pattern")
-Sleep WindowActiveDelay
+; Add to sip:Z
+AddLineGroupToRegionalDialPlan(%LineGroupName%, 1)
 
 ; =========================
 ; End Line Group Assignment
 ; =========================
-
-; Click on OK
-ControlClick, Button17
-
-; Wait For Regional Dial Plan to come back
-WaitForWin("Regional Dial Plan")
-Sleep WindowActiveDelay
 
 ;Exit (click on OK)
 ControlClick, Button11
