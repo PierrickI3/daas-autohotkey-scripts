@@ -38,6 +38,7 @@ If (ErrorLevel != 0) ;
 Run "C:\I3\IC\Server\IAShellU.exe"
 WaitForWin("Interaction Administrator")
 Sleep, 2000
+Send {Home}
 
 ; ============
 ; Create Lines
