@@ -13,7 +13,7 @@ AutoTrim OFF
 ; Variables
 ; =========
 KeyDelay 		    = 500
-InputKeyDelay 		= 50
+InputKeyDelay 		= 80
 WinWaitActiveDelay 	= 300
 WindowActiveDelay   = 200
 LineName 		    = Loopback
