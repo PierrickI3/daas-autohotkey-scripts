@@ -103,7 +103,8 @@ RemoveLineGroupToRegionalDialPlan(LineGroupName, EntryPosition)
   Sleep 200
 
   ; Edit it
-  ControlClick, Button3
+  ControlFocus, Button3, Regional Dial Plan
+  ControlClick, Button3, Regional Dial Plan
   WaitForWin("Regional Dial Plan - Edit Pattern")
   Sleep 200
 
