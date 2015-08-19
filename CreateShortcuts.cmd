@@ -8,8 +8,8 @@ REM "Create Loopback Line" shortcut
 REM -------------------------------
 echo sLinkFile = "%USERPROFILE%\Desktop\Create Loopback Line.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\vagrant\Desktop\Scripts\IA\Create Loopback Line.ahk" >> %SCRIPT%
-echo oLink.WorkingDirectory = "C:\Users\vagrant\Desktop\Scripts\IA" >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\vagrant\Desktop\Scripts\AutoHotKey\IA\Create Loopback Line.ahk" >> %SCRIPT%
+echo oLink.WorkingDirectory = "C:\Users\vagrant\Desktop\Scripts\AutoHotKey\IA" >> %SCRIPT%
 echo oLink.Description = "Creates a loopback line in Interaction Administrator" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
