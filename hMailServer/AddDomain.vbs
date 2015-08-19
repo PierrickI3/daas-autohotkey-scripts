@@ -1,16 +1,25 @@
-Set oArgs = WScript.Arguments 
-If oArgs.count <> 1 Then 
-   WScript.Quit 
-End If 
+' Global variables
+Public obApp
+Public obAdminAccount
+Public obNewDomain
 
-Dim obBaseApp 
-Set obBaseApp = CreateObject("hMailServer.Application") 
+Public Const user = "Administrator"
+Public Const password = ""
 
-Dim obNewDomain 
-Set obNewDomain = obBaseApp.Domains.Add() 
+' Check if a domain name was passed
+Set oArgs = WScript.Arguments
+If oArgs.count <> 1 Then
+   WScript.Quit
+End If
 
-obNewDomain.Name = oArgs(0) 
-obNewDomain.Active = True 
-obNewDomain.Save() 
+' Authenticate
+Set obApp = CreateObject("hMailServer.Application")
+Set obAdminAccount = obApp.Authenticate(user, password)
 
-obBaseApp.Domains.Refresh()
+' Add new domain
+Set obNewDomain = obApp.Domains.Add()
+obNewDomain.Name = oArgs(0)
+obNewDomain.Active = True
+obNewDomain.Save()
+
+obApp.Domains.Refresh()

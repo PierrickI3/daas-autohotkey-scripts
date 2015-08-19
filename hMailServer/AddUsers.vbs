@@ -1,15 +1,21 @@
-Option Explicit
+' Global variables
+Public obApp
+Public objFSO
+Public objTextFile
 
-Dim obBaseApp
-Dim objFSO
-Dim objTextFile
+Public Const ForReading = 1
+
 Dim strNewAlias,i
 
-Const ForReading = 1
+' Check if a .csv containing the list of users was passed
+Set oArgs = WScript.Arguments 
+If oArgs.count <> 1 Then 
+   WScript.Quit 
+End If
  
-Set obBaseApp = CreateObject("hMailServer.Application") 
+Set obApp = CreateObject("hMailServer.Application") 
 Set objFSO = CreateObject("Scripting.FileSystemObject")
-Set objTextFile = objFSO.OpenTextFile("Users.csv", ForReading)
+Set objTextFile = objFSO.OpenTextFile(oArgs(0), ForReading)
 
 Do While objTextFile.AtEndOfStream <> True
     strNewAlias = split(objTextFile.Readline, ",")
@@ -29,7 +35,7 @@ Sub AddAlias(strAlias,strEmailAddress,strDomain)
    Dim obAliases 
    Dim obNewAlias
 
-   Set obDomain = obBaseApp.Domains.ItemByName(strDomain) 
+   Set obDomain = obApp.Domains.ItemByName(strDomain) 
    Set obAliases = obDomain.Aliases
    Set obNewAlias = obAliases.Add() 
    
@@ -49,7 +55,7 @@ Sub AddUser(strUsername, strPassword, strDomain)
    Dim obAccounts 
    Dim obNewAccount
 
-   Set obDomain = obBaseApp.Domains.ItemByName(strDomain) 
+   Set obDomain = obApp.Domains.ItemByName(strDomain) 
    Set obAccounts = obDomain.Accounts
    Set obNewAccount = obAccounts.Add() 
    
