@@ -15,7 +15,7 @@ AutoTrim OFF
 KeyDelay 		    = 500
 InputKeyDelay 		= 80
 WinWaitActiveDelay 	= 300
-WindowActiveDelay   = 200
+WindowActiveDelay   = 500
 LineName 		    = Loopback
 LineGroupName 		= Loopback
 
