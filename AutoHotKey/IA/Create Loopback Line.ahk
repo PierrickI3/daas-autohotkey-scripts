@@ -13,8 +13,8 @@ AutoTrim OFF
 ; Variables
 ; =========
 KeyDelay 			= 500
-InputKeyDelay 		= 50
-WinWaitActiveDelay 	= 300
+InputKeyDelay 		= 100
+WinWaitActiveDelay 	= 500
 WindowActiveDelay   = 500
 LineName 			= Loopback
 LineGroupName 		= Loopback
@@ -29,7 +29,7 @@ AHKPanic(1, 0, 0, 0)
 ; ===============================
 ; Close Existing instance of Interaction Administrator
 Process, Exist, IAShellU.exe
-If (ErrorLevel != 0) ; 
+If (ErrorLevel != 0) ;
 {
   WinClose Interaction Administrator
 }
@@ -55,7 +55,7 @@ WaitForWin("Entry Name")
 Sleep WindowActiveDelay
 
 ; Enter Line name
-SetKeyDelay InputKeyDelay 
+SetKeyDelay InputKeyDelay
 Send %LineName%{enter}
 SetKeyDelay KeyDelay
 
@@ -96,9 +96,9 @@ WaitForWin("SIP Address")
 Sleep WindowActiveDelay
 
 ; Set to local IP address of "Ethernet 2" adapter
-SetKeyDelay InputKeyDelay 
+SetKeyDelay InputKeyDelay
 Send %A_IPAddress1%{enter}
-SetKeyDelay KeyDelay 
+SetKeyDelay KeyDelay
 
 ; Wait for Line Configuration dialog to come back
 WaitForWin("Line Configuration")
@@ -124,9 +124,9 @@ WaitForWin("Entry Name")
 Sleep WindowActiveDelay
 
 ; Enter Line Group Name
-SetKeyDelay InputKeyDelay 
+SetKeyDelay InputKeyDelay
 Send %LineGroupName%{enter}
-SetKeyDelay KeyDelay 
+SetKeyDelay KeyDelay
 
 ; Select for reporting and Dial Group
 Sleep 100

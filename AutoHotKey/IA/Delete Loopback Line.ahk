@@ -13,8 +13,8 @@ AutoTrim OFF
 ; Variables
 ; =========
 KeyDelay 		    = 500
-InputKeyDelay 		= 80
-WinWaitActiveDelay 	= 300
+InputKeyDelay 		= 100
+WinWaitActiveDelay 	= 500
 WindowActiveDelay   = 500
 LineName 		    = Loopback
 LineGroupName 		= Loopback
@@ -29,7 +29,7 @@ AHKPanic(1, 0, 0, 0)
 ; ===============================
 ; Close Existing instance of Interaction Administrator
 Process, Exist, IAShellU.exe
-If (ErrorLevel != 0) ; 
+If (ErrorLevel != 0) ;
 {
   WinClose Interaction Administrator
 }
@@ -44,7 +44,7 @@ Send {Home}
 ; =====================
 ; Go to Phone Numbers
 SetKeyDelay InputKeyDelay
-Send Phone Numbers
+Send Ph
 SetKeyDelay KeyDelay
 
 ; Edit Configuration
